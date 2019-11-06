@@ -1,0 +1,45 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+
+<table class="table table-sm table-bordered table-hover table-responsive pretty">
+	<thead class="thead-default">
+		<tr>
+			<th>#</th>
+			<th><%= sortable "pri", "pri" %></th>
+			<th><%= sortable "question", "question" %></th>
+			<th><%= sortable "teaming", "teaming" %></th>
+			<th><%= sortable "appears", "appears" %></th>
+			<th><%= sortable "frequency", "frequency" %></th>
+			<th><%= sortable "qtype", "qtype" %></th>
+			<th><%= sortable "role ", "role " %></th>
+			<th><%= sortable "required ", "required " %></th>
+			<th><%= sortable "conditions", "conditions" %></th>
+			<th><%= sortable "mapping", "mapping" %></th>
+
+		</tr>
+	</thead>
+	<% index = 0 %>
+	<% @csvimporters.each do |csvimporter| %>
+	<% index += 1 %>
+	<tbody>
+		<tr>
+			<th scope="row"><%= index %></th>
+			<td class="text-primary"><%= csvimporter.pri %></td>
+			<td class="text-primary"><%= csvimporter.question %></td>
+			<td class="text-primary price"><%= csvimporter.teaming %></td>
+			<td class="text-primary"><%= csvimporter.appears %></td>
+			<td class="text-muted">
+				<%= csvimporter.frequency %>
+			</td>
+			<td class="text-muted"><%= csvimporter.qtype %></td>
+			<td class="text-muted"><%= csvimporter.role %></td>
+			<td class="text-muted"><%= csvimporter.required %></td>
+			<td class="text-muted"><%= csvimporter.conditions %></td>
+			<td class="text-muted"><%= csvimporter.mapping %></td>
+			
+		</tr>
+	</tbody>
+	<% end %>
+</div>
+
+<%= will_paginate @csvimporters %>

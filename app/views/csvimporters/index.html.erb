@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col-sm-12 col-md-8">
+    <div class="csvimporter-import">
+      <h3>Upload and Import CSV Data</h3>
+      <%= form_tag import_csvimporters_path, multipart: true do %>
+          <%= file_field_tag :file, id: "choose-file", class: "btn btn-secondary btn-file" %>
+          <%= submit_tag "Preview CSV Data", id: "import-submit", class: "btn btn-success" %>
+      <% end %> 
+    </div>
+  </div>
+  <div class="col-sm-12 col-md-4">
+    <div class="csvimporter-search">
+      <%= form_tag import_csvimporters_path, method: 'get', id: "csvimporters_search" do %>
+        <%= submit_tag "Upload Data", id: "validate-submit", class: "btn btn-success" %>
+        <%= submit_tag "Clean Data", id: "cleardata-submit", class: "btn btn-success" %>
+      <% end %> 
+    </div>
+
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="csvimporter-list">
+      <h3>CSV Data Preview to Verify Before Upload</h3>
+      <div id="csvimporters"><%= render 'csvimporters' %></div>
+    </div>
+  </div>
+</div>
