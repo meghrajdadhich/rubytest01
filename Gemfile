@@ -24,7 +24,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '~> 6.0.1'
 
 # Use Bootstrap 4
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.3.1'
 
 # Bootstrap tooltips and popovers depend on http://tether.io/ for positioning.
 source 'https://rails-assets.org' do
